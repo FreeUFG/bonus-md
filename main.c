@@ -4,7 +4,6 @@
 int main()
 {
     relacao_01();
-    printf("Meu nome eh Rafael Grisotto");
-
+    printf("Testando projeto no Netbeans");
     return 0;
 }
