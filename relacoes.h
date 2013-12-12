@@ -4,7 +4,7 @@
 #include "propriedades.h"
 
 void relacao_01(){
-
+//primeiro será feito com constantes, depois será com váriaveis
     char nome[3] = "R01";
     int conjS[3] = {1,2,3};
     int rho[3][2] = { {1,2}, {3,2}, {1,1} };
