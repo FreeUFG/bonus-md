@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "relacoes.h" //biblioteca onde será feita as relações
+#include "relacoes.h"
 
 int main()
 {
-    relacao_01(); //Chamando a biblioteca
+    relacao_01();
     printf("Meu nome eh Rafael Grisotto");
 
     return 0;
