@@ -22,8 +22,38 @@
 
 int main()
 {
-    relacao_01();
-    printf("Meu nome e Daniel Leonardo.\n");
+    int opcao;
+    while(opcao>=1)
+    {
 
-    return 0;
+    printf("=======================================================\n");
+    printf("=============== VERIFICANDO RELACOES ==================\n");
+    printf("=======================================================\n");
+    printf("1-Relacao 1\n");
+    printf("0-SAIR DO PROGRAMA\n");
+    printf("=======================================================\n");
+    printf("INFORME A OPCAO PARA SER VERIFICADA:\n");
+    scanf("%d",&opcao);
+    switch(opcao)
+    {
+    case 0:
+        opcao=-5;
+            printf("=======================================================\n");
+            printf("PROGRAMA FINALIZADO COM SUCESSO!\n");
+            printf("=======================================================\n");
+            break;
+
+    case 1:
+            relacao_01();
+            break;
+    default:
+            opcao=-5;
+            printf("=======================================================\n");
+            printf("OPCAO INVALIDA, PROGRAMA FINALIZADO!\n");
+            printf("=======================================================\n");
+
+        break;
+
+    }
+   }
 }
