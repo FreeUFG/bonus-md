@@ -1,6 +1,6 @@
 /*
     Copyright © 2013 FreeUFG.
-   
+
     This file is part of BonusMD.
 
     BonusMD is free software: you can redistribute it and/or modify
@@ -23,6 +23,6 @@
 int main()
 {
     relacao_01();
-
+    printf("Meu nome eh Savio Maia.\n");
     return 0;
 }
