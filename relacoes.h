@@ -9,7 +9,7 @@ void relacao_01(){
     int conjS[3] = {1,2,3};
     int rho[3][2] = { {1,2}, {3,2}, {1,1} };
 
-    int reflexiva = 0;
+    int reflexiva = 1;
     int simetrica = 0;
     int transitiva = 1;
     int anti_simetrica = 1;
@@ -17,7 +17,7 @@ void relacao_01(){
 
     printf("\n");
 
-    if(ehReflexiva() != reflexiva){
+    if(ehReflexiva(rho) != reflexiva){
         printf("ERRO: [%s] - Problema na propriedade reflexiva!\n", nome);
     }
     if(ehSimetrica() != simetrica){
