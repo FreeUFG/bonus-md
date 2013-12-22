@@ -1,17 +1,17 @@
 #ifndef _PROPRIEDADES_H
 #define _PROPRIEDADES_H
 
-int ehReflexiva(int conjS_2[], int rho_2[][2]); // protótipo da funcao reflexiva
+int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par); // protótipo da funcao reflexiva
 
 
-int ehReflexiva(int conjS_2[], int rho_2[][2]) { // funcao para verificar se eh reflexiva, return 0 =  falso, return 1 = verdade.
+int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par) { // funcao para verificar se eh reflexiva, return 0 =  falso, return 1 = verdade.
     int i, j, k, cont = 0; // cont verifica se encontrou o par de x = (x,x)
     int refl = 0; // se refl = 3 eh porque os 3 elementos de S existe o (x,x) em rho
     
-    for (i = 0; i < 3; i++) //For 1 - para verificar cada elemento do conjunto S
+    for (i = 0; i < tam_S; i++) //For 1 - para verificar cada elemento do conjunto S, sabendo o tamanho de S
     {
         cont = 0; //zerar o cont para verificar o proximo elemento em S
-        for (j = 0; j < 3; j++) // For 2 - Como eh uma matriz, este for varia a linha
+        for (j = 0; j < qtd_par; j++) // For 2 - Como eh uma matriz, este for varia a linha, sabendo a quantidade de pares
         {
             for (k = 0; k < 2; k++) //For 3 - este for varia a coluna da matriz,
             {
@@ -39,7 +39,7 @@ int ehReflexiva(int conjS_2[], int rho_2[][2]) { // funcao para verificar se eh 
         }
 
     }
-    if (refl == 3) {
+    if (refl == tam_S) {
         return 1;
     } else {
         return 0;
