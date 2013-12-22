@@ -18,7 +18,7 @@
  */
 
 #include <stdio.h>
-#include "relacoes.h"
+#include "relacoes.h" //Biblioteca onde será definida o conjunto S e o rho
 
 int main()
 {
