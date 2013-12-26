@@ -8,10 +8,10 @@ int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par) { // funca
     int i, j, k, cont = 0; // cont verifica se encontrou o par de x = (x,x)
     int refl = 0; // se refl = 3 eh porque os 3 elementos de S existe o (x,x) em rho
     
-    for (i = 0; i < tam_S; i++) //For 1 - para verificar cada elemento do conjunto S, sabendo o tamanho de S
+    for (i = 0; i < tam_S; i++) //For 1 - para verificar cada elemento do conjunto S. tam_S me manda a quantidade de elementos
     {
         cont = 0; //zerar o cont para verificar o proximo elemento em S
-        for (j = 0; j < qtd_par; j++) // For 2 - Como eh uma matriz, este for varia a linha, sabendo a quantidade de pares
+        for (j = 0; j < qtd_par; j++) // For 2 - Como eh uma matriz, este for varia a linha, qtd_par sabe quantos pares existe
         {
             for (k = 0; k < 2; k++) //For 3 - este for varia a coluna da matriz,
             {
@@ -24,15 +24,15 @@ int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par) { // funca
                     } else { // caso x = (x, ), mas falso em x = ( , x) então já sai do For 3
                         k = 2;
                     }
-                } else { // caso x = ( x, ) seja falto já sai do For 3
+                } else { // caso x = ( x, ) seja falso já sai do For 3
                     k = 2;
                 }
 
 
 
             }
-            if (cont == 1) { // se cont == 1 é se existe x = (x,x) entao (refle++) e então nem verifica os outros pares(j=3) 
-                j = 3;
+            if (cont == 1) { // se cont == 1 é se existe x = (x,x) entao (refle++) e então nem verifica os outros pares(j=qtd_par) 
+                j = qtd_par;
                 refl++;
             }
 

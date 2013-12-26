@@ -17,7 +17,7 @@ void relacao_01(){
     int simetrica = 0; // (Vx,y E S ^ (x,y) E rho -> (y,x) E rho). 0 = falso, 1 = verdade.
     int transitiva = 1; // (Vx,y,z E S ^ (x,y) E rho ^ (y,z) E rho ^ -> (x,z) E rho). 0 = falso, 1 = verdade.
     int anti_simetrica = 1; // (Vx,y E S ^ (x,y) E rho ^ (y,x) E rho -> x=y). 0 = falso, 1 = verdade.
-    int equivalencia = 0; // Verdade se reflexiva = 1, simetrica = 1 e trasitiva = 1,senão falto. 0 = falso, 1 = verdade.
+    int equivalencia = 0; // Verdade se reflexiva = 1, simetrica = 1 e trasitiva = 1,senão falso.  0 = falso, 1 = verdade.
 
     printf("\n");
 
