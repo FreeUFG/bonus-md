@@ -2,6 +2,7 @@
 #define _PROPRIEDADES_H
 
 int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par); // protótipo da funcao reflexiva
+int ehSimetrica(int rho_2[][2], int qtd_par); // protótipo da funcao simetrica
 
 
 int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par) { // funcao para verificar se eh reflexiva, return 0 =  falso, return 1 = verdade.
@@ -46,8 +47,55 @@ int ehReflexiva(int conjS_2[], int rho_2[][2],int tam_S, int qtd_par) { // funca
     }
 }
 
-int ehSimetrica() { // funcao para verificar se eh simetrica, return 0 =  falso, return 1 = verdade.
-    return 1;
+int ehSimetrica(int rho_2[][2], int qtd_par) { // funcao para verificar se eh simetrica, return 0 =  falso, return 1 = verdade.
+    int i,j, k,y;//variaveis para os 4 for.
+    int cont=0; // O "cont" conta quantos pares que existe simetrico existe e tem que ser igual a qtd_par 
+    
+            for (i = 0; i < qtd_par; i++) //For 1 = eh a linha da matriz ou o (i, ) dos pares
+           {
+                for (j = 0; j < 2; j++) //For 2 = eh a coluna da matriz ou o ( ,j) dos pares
+                {
+                    if(rho_2[i][j] == rho_2[i][j+1])// Pares iguais como (1,1) já são simetricos, assim já pula.
+                    {
+                        cont++; // Par eh simetrico
+                    }
+                    else //Senão foram iguais nos verificamos com os outros pares
+                    {
+                        for(k=0; k < qtd_par; k++)//For 3 = verifica o par ([i,j],[i,j+1]) procurando o ([k,y+1],[k,y])
+                        {
+                            for(y=0; y < 2; y++)
+                            {
+                                if(rho_2[k][y] != rho_2[k][y+1])// Verifica se o par sao numeros diferentes, se for igual nao precisa verificar, pois já verificamos todos iguais antes
+                                {
+                                    if((rho_2[i][j+1] == rho_2[k][y]) && (rho_2[i][j] == rho_2[k][y+1])) //Faco esta verificacao ([i,j],[i,j+1]) == ([k,y+1],[k,y])
+                                    {
+                                        cont++; // Par eh simetrico
+                                        k= qtd_par; // Para de procurar, pois ja encontrou o simetrico
+                                    }
+                                       
+                                }
+
+                                y=2;
+                            
+                            }
+                        }
+                        
+                    }
+                  j=2;      
+
+
+                 }
+
+            }
+    if(cont == qtd_par) // Todos os pares sao simetricos?
+    {
+        return 1; //Sim
+    }
+    else
+    {
+        return 0; //Nao
+    }
+    
 }
 
 int ehTransitiva() { // funcao para verificar se eh transitiva, return 0 =  falso, return 1 = verdade.
