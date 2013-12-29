@@ -29,7 +29,7 @@ void relacao_01(){
     if(ehTransitiva() != transitiva){
         printf("ERRO: [%s] - Problema na propriedade transitiva!\n", nome);
     }
-    if(ehAntiSimetrica() != anti_simetrica){
+    if(ehAntiSimetrica(rho, pares) != anti_simetrica){
         printf("ERRO: [%s] - Problema na propriedade anti-simetrica!\n", nome);
     }
     if(ehEquivalencia() != equivalencia){
