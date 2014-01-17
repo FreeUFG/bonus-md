@@ -1,6 +1,6 @@
 /*
     Copyright © 2013 FreeUFG.
-   
+
     This file is part of BonusMD.
 
     BonusMD is free software: you can redistribute it and/or modify
@@ -22,6 +22,7 @@
 
 int main()
 {
+    printf("Talyta");
     relacao_01();
 
     return 0;
