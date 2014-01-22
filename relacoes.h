@@ -9,8 +9,8 @@ void relacao_01(){
     int conjS[3] = {1,2,3};
     int rho[3][2] = { {1,2}, {3,2}, {1,1} };
 
-    int reflexiva = 0;
-    int simetrica = 0;
+    int reflexiva = 1;
+    int simetrica = 1;
     int transitiva = 1;
     int anti_simetrica = 1;
     int equivalencia = 0;
@@ -29,9 +29,10 @@ void relacao_01(){
     if(ehAntiSimetrica() != anti_simetrica){
         printf("ERRO: [%s] - Problema na propriedade anti-simetrica!\n", nome);
     }
-    if(ehEquivalencia() != equivalencia){
-        printf("ERRO: [%s] - Problema na verifiacao da equivalencia!\n", nome);
+    if(((simetrica==1)&&(transitiva==1)&&(reflexiva==1)) != equivalencia){
+    printf("ERRO: [%s] - Problema na verifiacao da equivalencia!\n", nome);
     }
+
 }
 
 #endif
