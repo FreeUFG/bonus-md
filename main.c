@@ -1,4 +1,4 @@
-/*
+﻿/*
     Copyright © 2013 FreeUFG.
 
     This file is part of BonusMD.
@@ -24,7 +24,7 @@ int main(){
 
     //Menu de opções [por @fonzaex]
     int opcao;
-
+	printf("Meu nome e Diego");
     while(opcao>=1){
         printf("\n=======================================================\n");
         printf("=============== VERIFICANDO RELACOES ==================\n");
