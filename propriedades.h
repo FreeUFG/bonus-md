@@ -1,33 +1,88 @@
 #ifndef _PROPRIEDADES_H
 #define _PROPRIEDADES_H
 
-//Função ehReflexiva [por @fonzaex]
-//[Adaptada por @bispojr]
-int ehReflexiva(int rho2[][2]);
-int ehReflexiva(int rho2[][2]){ // funcao para verificar se eh reflexiva, return 0 =  falso, return 1 = verdade.
+//@hcb13
+int ehReflexiva(int conjS[], int tam_conj, int rho[][2], int qtd_pares ){
+	int i;//percorrer o conjunto
+	int j;//percorrer rho
+	int c;//simular os pares
+	for( i = 0; i < tam_conj; i++ ){
+		c = conjS[i];
+		for( j = 0; j < qtd_pares; j++){
+			if( (rho[j][0] == c ) && ( rho[j][1] == c ) ){
+				break;//axou um par reflexivo
+			}
+		}
+		if( j == qtd_pares ){
+			return 0;//nao encontrou par reflexivo
+		}
+	}
+	return 1;//eh reflexiva a relacao
+}
 
-    //AINDA FALTA PASSAR O VALOR DO CONJS POR REFERENCIA E VERIFICAR SE TODO X PERTENCE AO COJUNTO S;
-    //MOSTRANDO OS SUBCONJUNTOS, EM FORMA DE MATRIZ
+int ehSimetrica(int conjS[], int rho[][2], int qtd_pares ){
+	int i, j, x, y;
+	for( i = 0; i < qtd_pares; i++ ){
+		x = rho[i][0];
+		y = rho[i][1];
+		for( j = 0; j < qtd_pares; j++ ){
+			if( ( x == rho[j][1] ) && ( y == rho[j][0] ) ){
+				break;//axou o par simetrico
+			}
+		}
+		if( j == qtd_pares ){
+			return 0;//nao axou par simetrico a x e y
+		}
+	}
+	return 1;
+}
 
-    //UNICA LOGICA QUE ACHEI FOI ESSA, DEVE-SE IMPLEMENTAR EM CIMA NOS LAÇOS FOR
-    if(rho2[0][0]==rho2[0][1] && rho2[1][0]==rho2[1][1] && rho2[2][0]==rho2[2][1]){
-        return 1;
-    }
-    else{
-        return 0;
-    }
+int ehTransitiva( int conjS[], int rho[][2], int qtd_pares){
+	int i, j, p, x1, y1, y2, z2;
+	for( i = 0; i < qtd_pares; i++){
+		x1 = rho[i][0];
+		y1 = rho[i][1];
+		for( j = 0;  j < qtd_pares; j++ ){
+			y2 = rho[j][0];
+			if( y1 == y2 ){
+				z2 = rho[j][1];
+				for( p = 0; p < qtd_pares; p++ ){
+					if( ( x1 == rho[p][0] ) && ( z2 == rho[p][1] ) ){
+						break;//encontrou par transitivo
+					}
+				}
+				if( p == qtd_pares ){
+					return 0;//nao encontrou
+				}
+			}
+		}
+	}
+	return 1;//eh transitiva
 }
-int ehSimetrica(){ // funcao para verificar se eh simetrica, return 0 =  falso, return 1 = verdade.
-    return 1;
+
+int ehAntiSimetrica( int conjS[], int rho[][2], int qtd_pares){
+	int i, j, x, y;
+	for( i = 0; i < qtd_pares; i++ ){
+		x = rho[i][0];
+		y = rho[i][1];
+		for( j = 0; j < qtd_pares; j++ ){
+			if( ( x == rho[j][1] ) && ( y == rho[j][0] ) ){
+				if( x == y ){
+					break;//encontrou o par anti-simétrico
+				}else{
+					return 0;
+				}
+			}
+		}
+	}
+	return 1;
+
 }
-int ehTransitiva(){ // funcao para verificar se eh transitiva, return 0 =  falso, return 1 = verdade.
-    return 0;
-}
-int ehAntiSimetrica(){ // funcao para verificar se eh anti-simetrica, return 0 =  falso, return 1 = verdade.
-    return 1;
-}
-int ehEquivalencia(){ // funcao para verificar se eh anti-simetrica, return 0 =  falso, return 1 = verdade.
-    return 0;
+
+int ehEquivalencia(int conjS[], int tam_conj, int rho[][2], int qtd_pares){
+	if( (ehReflexiva(conjS, tam_conj, rho, qtd_pares) ) && ( ehSimetrica(conjS, rho, qtd_pares) ) && ( ehTransitiva(conjS, rho, qtd_pares) ) ){
+		return 1;
+	}
 }
 
 #endif

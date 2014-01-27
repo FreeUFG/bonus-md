@@ -23,7 +23,7 @@
 int main(){
 
     //Menu de opções [por @fonzaex]
-    int opcao;
+    int opcao = 1;
 
     while(opcao>=1){
         printf("\n=======================================================\n");
@@ -49,6 +49,10 @@ int main(){
             relacao_01();
             relacao_02();
             relacao_03();
+            relacao_04();
+            relacao_05();
+            relacao_06();
+            relacao_07();
             break;
         default:
             opcao=-5;
@@ -58,7 +62,7 @@ int main(){
             printf("=======================================================\n");
             break;
         }
-    }
+    };
 
     return 0;
 }
